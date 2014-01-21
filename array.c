@@ -10,11 +10,11 @@ struct Array {
   void * arr;
 };
 
-/* array_create() and array_free() are the methods for creating and cleaning 
- * up our array object. array_create() takes the number of objects that the 
+/* array_new() and array_free() are the methods for creating and cleaning 
+ * up our array object. array_new() takes the number of objects that the 
  * initial array can hold, and the size of that object in bytes. */ 
 
-Array array_create(size_t length, int size)
+Array array_new(size_t length, int size)
 {
   assert(length >= 0);
 
@@ -169,7 +169,7 @@ void array_swap(Array a, size_t i, size_t j)
 Array array_copy(Array source)
 {
   assert(source);
-  Array copy = array_create(source->length,source->size);
+  Array copy = array_new(source->length,source->size);
   
   if (copy->length >= source->length && source->length > 0)
   {

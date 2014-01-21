@@ -4,7 +4,7 @@
 
 typedef struct Array *Array;
 
-extern Array array_create(size_t length, int size);
+extern Array array_new(size_t length, int size);
 extern void array_free(Array *a);
 
 extern int array_length(Array a);
